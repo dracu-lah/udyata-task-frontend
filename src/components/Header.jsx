@@ -16,6 +16,9 @@ const Header = () => {
             <strong>Go to Dashboard</strong>
           </Link>
         </li>
+        <li>
+          <a role="button" target="_blank" className="secondary" href="https://github.com/dracu-lah/udyata-task-frontend">Github</a>
+        </li>
       </ul>
     </nav>
   );
