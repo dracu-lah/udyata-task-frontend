@@ -3,12 +3,10 @@ import Header from "@/components/Header";
 
 const RootLayout = () => {
   return (
-    <div>
+    <main className="container-fluid">
       <Header />
-      <main>
-        <Outlet />
-      </main>
-    </div>
+      <Outlet />
+    </main>
   );
 };
 

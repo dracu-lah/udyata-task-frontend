@@ -5,14 +5,18 @@ const Header = () => {
     <nav>
       <ul>
         <li>
-          <strong>ProductFetch</strong>
+          <strong>Brand</strong>
         </li>
       </ul>
       <ul>
         <li>
-          <Link to="/">
-            <strong>Go to Dashboard</strong>
-          </Link>
+          <a href="#">Link</a>
+        </li>
+        <li>
+          <a href="#">Link</a>
+        </li>
+        <li>
+          <a href="#" role="button">Button</a>
         </li>
       </ul>
     </nav>

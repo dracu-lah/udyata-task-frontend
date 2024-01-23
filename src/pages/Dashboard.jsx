@@ -7,21 +7,19 @@ const Dashboard = () => {
     isLoading,
   } = useGetProductsQuery();
   if (isLoading) {
-    return "Loading...";
+    return <a href="#" aria-busy="true">Loading Products...</a>;
   }
   if (error) {
     return "Error Occurred!";
   }
   return (
-    <div>
-      <div>
-        {data.products.map((product) => (
-          <ProductCard
-            key={product.id}
-            {...product}
-          />
-        ))}
-      </div>
+    <div className="container">
+      {data.products.map((product) => (
+        <ProductCard
+          key={product.id}
+          {...product}
+        />
+      ))}
     </div>
   );
 };
