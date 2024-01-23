@@ -7,7 +7,11 @@ const Dashboard = () => {
     isLoading,
   } = useGetProductsQuery();
   if (isLoading) {
-    return <a href="#" aria-busy="true">Loading Products...</a>;
+    return (
+      <div style={{ textAlign: "center" }}>
+        <a href="#" aria-busy="true">Loading Products...</a>
+      </div>
+    );
   }
   if (error) {
     return "Error Occurred!";

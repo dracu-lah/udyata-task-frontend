@@ -4,9 +4,11 @@ const Header = () => {
   return (
     <nav>
       <ul>
-        <li>
-          <strong>ProductFetch</strong>
-        </li>
+        <Link to="/">
+          <li>
+            <strong>ProductFetch</strong>
+          </li>
+        </Link>
       </ul>
       <ul>
         <li>

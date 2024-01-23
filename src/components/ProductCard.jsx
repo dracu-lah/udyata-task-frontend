@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ id, title, description, price, rating, thumbnail }) => {
+const ProductCard = ({ id, title, description, price, thumbnail }) => {
   return (
     <article>
       <Link to={`/${id}`}>
-      <img src={thumbnail} className="container-fluid" />
+        <img src={thumbnail} className="container-fluid" />
       </Link>
       <footer>
         <nav>

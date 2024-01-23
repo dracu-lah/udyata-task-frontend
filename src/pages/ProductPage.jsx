@@ -8,7 +8,11 @@ const ProductPage = () => {
     isLoading,
   } = useGetProductsByIdQuery(id);
   if (isLoading) {
-    return <a href="#" aria-busy="true">Loading The Product...</a>;
+    return (
+      <div style={{ textAlign: "center" }}>
+        <a href="#" aria-busy="true">Loading The Product...</a>
+      </div>
+    );
   }
   if (error) {
     return "Some Error Occured!";
