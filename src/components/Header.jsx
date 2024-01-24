@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
 
 const Header = () => {
   return (
@@ -12,12 +13,18 @@ const Header = () => {
       </ul>
       <ul>
         <li>
-          <Link to="/">
-            <strong>Go to Dashboard</strong>
-          </Link>
+          <CartIcon />
         </li>
+
         <li>
-          <a role="button" target="_blank" className="secondary" href="https://github.com/dracu-lah/udyata-task-frontend">Github</a>
+          <a
+            role="button"
+            target="_blank"
+            className="secondary"
+            href="https://github.com/dracu-lah/udyata-task-frontend"
+          >
+            Github
+          </a>
         </li>
       </ul>
     </nav>
