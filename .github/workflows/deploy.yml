@@ -68,7 +68,7 @@ jobs:
           script: |
             # Ensure Docker is running
             sudo systemctl start docker
-            sudo docker load -i ~/react-app.tar
+            sudo docker load -i ~/react-app.tar/react-app.tar
 
             # Stop and remove existing container if any
             sudo docker stop my-react-app-container || true
