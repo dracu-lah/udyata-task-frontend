@@ -39,7 +39,7 @@ jobs:
       # Step 6: Save Docker image to tar file
       - name: Save Docker image to file
         run: |
-          docker save ${{ secrets.DOCKER_IMAGE_NAME }} -o react-app.tar
+          docker save -o react-app.tar ${{ secrets.DOCKER_IMAGE_NAME }}
 
       # Step 7: Transfer Docker image to EC2
       - name: Transfer Docker image to EC2
@@ -66,7 +66,13 @@ jobs:
           port: ${{ secrets.EC2_PORT }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker load -i ~/react-app.tar
-            docker stop my-react-app-container || true
-            docker rm my-react-app-container || true
-            docker run -d -p 80:80 --name my-react-app-container ${{ secrets.DOCKER_IMAGE_NAME }}
+            # Ensure Docker is running
+            sudo systemctl start docker
+            sudo docker load -i ~/react-app.tar
+
+            # Stop and remove existing container if any
+            sudo docker stop my-react-app-container || true
+            sudo docker rm my-react-app-container || true
+
+            # Run the new container
+            sudo docker run -d -p 80:80 --name my-react-app-container ${{ secrets.DOCKER_IMAGE_NAME }}
